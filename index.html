@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>How many Poppadoms does Rosco owe?</h2>
+
+Poppadom Counter
+<table>
+<tr>
+
+ <td>Start Date</td><td> <p id="startdate"></p></td>
+</tr>
+<tr><td>Todays Date</td>
+<td>
+<p id="todaydate"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p id="result"></p>
+</td>
+</tr>
+</table>
+<script>
+var startDate = new Date(2020, 7, 12);
+var today = new Date();
+document.getElementById("startdate").innerHTML = startDate.toDateString() ;
+document.getElementById("todaydate").innerHTML = today.toDateString() ;
+var difference = today - startDate;
+var days = difference / 1000 / 60 / 60 / 24;
+var weeks = parseInt(days / 7);	
+var messaged = "";
+if (weeks < 1) {
+  message = "no weeks have passed";
+} else {
+  message = "Total Poppadoms owed: <b>" + weeks + "</b>";
+}
+document.getElementById("result").innerHTML = message;
+</script> 
+
+
+
+
+
+</body>
+</html>
